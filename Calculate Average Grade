@@ -1,0 +1,36 @@
+class student():
+    def __init__(self,):
+        self.marks=[]
+    def input(self):
+        self.names=input("Enter your name:")
+        self.roll_no=input("Enter your roll no:")
+        mark=[]
+        print("Enter your marks:")
+        for j in range(1,6):
+            mark=int(input())
+            self.marks.append(mark)
+        tot=0
+        for i in self.marks:
+            tot+=i
+        self.avg=tot/5
+    def display(self):
+        if self.avg > 90 and self.avg <= 100:
+            grade="O"
+        elif self.avg> 80 and self.avg <= 90:
+            grade="A+"
+        elif self.avg > 70 and self.avg <= 80:
+            grade="A"
+        elif self.avg > 60 and self.avg <= 70:
+            grade="B"
+        elif self.avg > 50 and self.avg <= 60:
+            grade="B+"
+        elif self.avg > 40 and self.avg <= 50:
+            grade="C"
+        else:
+            grade="fail"
+        print("Name\t\tRoll no\t\tAverage\t\tGrade")
+        print(self.names, "\t\t", self.roll_no, "\t\t", self.avg, "\t\t", grade)
+
+d=student()
+d.input()
+d.display()
