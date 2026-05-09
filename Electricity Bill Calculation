@@ -1,0 +1,18 @@
+class electricity:
+    def __init__(self):
+        self.unit=0.0
+    def getinput(self):
+        self.unit=float(input("Enter no of unit:"))
+    def cal(self):
+        print("Unit:",self.unit)
+        if self.unit<=100:
+            print("Charge:No Charge")
+        elif self.unit<=200:
+            print("Charge:",((self.unit-100)*1.5))
+        elif self.unit<=300:
+            print("charge:",((self.unit-100)*2.5))
+        elif self.unit<=400:
+            print("Charge:"((self.unit-100)*4))
+e=electricity()
+e.getinput()
+e.cal()
