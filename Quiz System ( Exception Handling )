@@ -1,0 +1,35 @@
+class InvalidOptionError(Exception):
+    pass
+class quiz:
+    def __init__(self):
+        self.questions=["1.Captial of Jaipar?\nA.Tokyo\nB.Hisoshima\nC.Nagaoya",
+        "\n2.Largest Planet?A.Earth\n B.Jupiter\nC.Mars",
+        "\n3.Sunrises in?\nA.West\nB.East\nc.North",
+        "\n4.Fastest Land animal?\nA.Lion\nB.Cheetah\nC.Tiger",
+        "\n5.Largest Ocean\nA.Atlantic\nB.Indian\nC.Pacific",
+        "\n6.Capital of USA?\nA.NewYork\nB.Boston\nC.Wasington.D.C",
+        "\n7.Largest Mammal?\nA.Blue Whale\nB.Elephant\nC.Tiger",
+        "\n8.Number of Continents?\nA.8\nB.5\nC.7"]
+        self.answer=['A','B','B','B','C','C','A','C']
+        self.score=0
+    def start_quiz(self):
+        for i in range(len(self.questions)):
+            try:
+                print(self.questions[i])
+                ans=input("\nEnter Option(A/B/C):").upper()
+                if ans not in ['A','B','C']:
+                    raise InvalidOptionError
+                if self.answer[i]==ans:
+                    self.score+=1
+                else:
+                    print("Wrong Answer")
+            except InvalidOptionError:
+                print("Invalid OptionError")
+        return self.score
+    def display_score(self):
+        print("Total score:",self.score,"/8.",end=' ')
+c=quiz()
+print("\t\t...Quiz started....")
+c.start_quiz()
+print("\t\t...Quiz Ended...\n")
+c.display_score()
